@@ -5,13 +5,13 @@ import org.junit.Test;
 /**
  * Created by lucode on 2017/3/3.
  */
-public class Demo01 {
-    /*
+   /**
     * 基本类型:形式参数的改变,不影响实际参数
     * 引用类型:形式参数的改变,影响实际参数(传递的是地址)
     * String 虽然是 引用类型,但是是在常量池里面操作的,
     * 所以在作为参数的时候和基本数据类型一样
     * */
+public class Demo01 {
     @Test
     public void test1(){
         String string="hello";

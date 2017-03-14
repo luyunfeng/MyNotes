@@ -73,7 +73,7 @@ static方法跟类的任何实例都不相关，所以概念上不适用。
 但是 static 方法是编译的时候静态绑定.
 # 6.Java中private方法能重写吗？
 
-``` java
+```java
 public class A {
      // 默认 final 不能被继承
     private void print() {
@@ -92,9 +92,11 @@ class B extends A {
         System.out.println("B");
     }
 }
-运行结果
-A
-B
+/*
+  运行结果
+   A
+   B
+*/
 ```
 分析:
 >在Java中，所有的private方法默认是final的，
@@ -109,13 +111,38 @@ Java中的方法重载发生在同一个类里面两个或者是多个方法的�
 覆盖者可能不会限制它所覆盖的方法的访问。
 
 # 8. 接口和抽象类的区别是什么？
-精辟的回答
-从设计层面来说，
-> 抽象是对类的抽象，是一种模板设计，
+* 精辟的回答  
+> 从设计层面来说:  
+> 抽象是对类的抽象，是一种模板设计  
 > 接口是行为的抽象，是一种行为的规范。
 
+* 详细回答:
+```
+A:成员区别
+ * 抽象类：
+    成员变量：可以变量，也可以常量
+    构造方法：有
+    成员方法：可以抽象，也可以非抽象
+ * 接口：
+    成员变量：只可以常量  自动默认 static final 
+    构造方法:无
+    成员方法：只可以抽象  使用时必须要实例化
+ 
+B:关系区别
+ * 类与类:
+     继承，单继承
+ * 类与接口:
+     实现，单实现，多实现
+ * 接口与接口:
+     继承，单继承，多继承
+ 
+C:设计理念区别
+ * 抽象类 被继承体现的是：”is a”的关系。抽象类中定义的是该继承体系的共性功能。
+ * 接口  被实现体现的是：”like a”的关系。接口中定义的是该继承体系的扩展功能。
+```
 # 9.默认构造函数
-It is an important feature of the Java language that it always provides a default constructor to a class.
-总是为一个类提供了一个默认的构造函数是Java语言的一个重要特性 。
+* It is an important feature of the Java language that  
+ it always provides a default constructor to a class.  
+* 总是为一个类提供了一个默认的构造函数是Java语言的一个重要特性 。
 只有在没有定义 构造函数的时候 才会提供默认的构造函数
 

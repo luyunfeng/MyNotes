@@ -1,14 +1,12 @@
-package cn.lucode.java.$04_字符串.$01_理解;
 
+[Toc]
 
-import org.junit.Test;
-
+# 字符串一旦被赋值就无法被改变
+```
 /**
  * Created by lucode on 2017/3/3.
  */
 public class Demo01 {
-
-
     /*
     * 字符串一旦被赋值就无法被改变(事实上是值无法改变)
     * 字符串直接赋值的方式,先去字符串常量池里面找,如果有直接返回
@@ -25,7 +23,14 @@ public class Demo01 {
         // 打印结果是 helloworld
         System.out.println(str1);
     }
+}
+```
 
+
+#  s = new String("hello") s = "hello"区别?
+图解
+![image](../$00_images/String两种创建方式图解.jpg)
+```
     /**
      * String s = new String("hello");和String s = "hello"的区别?
      * 前者创建了两个对象,后者创建了一个对象
@@ -41,10 +46,13 @@ public class Demo01 {
         System.out.println(s1 == s2);//false
 
     }
+```
+# ==  和  equals()  的比较
 
-    /*
-    *    ==  和  equals()  的比较
-    * */
+```java
+/*
+* ==  和  equals()  的比较
+*/
     @Test
     public void test3() {
         String s1 = new String("hello");
@@ -66,10 +74,11 @@ public class Demo01 {
         System.out.println(s5.equals(s6));// true
 
     }
+```
+# 字符串拼接
 
-    /*
-    *字符串的拼接
-    * */
+```java
+    //字符串的拼接
     @Test
     public void test4() {
         String s1 = "hello";
@@ -85,5 +94,4 @@ public class Demo01 {
         // 其实通过反编译 发现,在编译的时候已经把 hello 和 world 拼接在一起了
         // System.out.println(s3 == "helloworld"); 反编译后发现是这样的
     }
-
-}
+```

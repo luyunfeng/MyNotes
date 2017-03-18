@@ -115,13 +115,13 @@ html页面代码
 **请求包含**：地址名字不变，保留响应头，也保留页面
 > request.getRequestDispatcher("/oneServlet").include(request, response);
 
-###通过request域设置参数
+### 通过request域设置参数
 
  >request.setAttribute("name", "zhangsan");
 
  >request.getAttribute("name")
 
 
-###request.setAttribute和request.getParameter()区别
+### request.setAttribute和request.getParameter()区别
 
 request.getParameter()通常是通过post或者 get 数据

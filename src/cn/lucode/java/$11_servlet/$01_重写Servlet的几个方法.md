@@ -1,5 +1,4 @@
 ```java
- 
 public class MyServlet implements Servlet {
     //生命周期方法  销毁前调用   调用一次
     @Override

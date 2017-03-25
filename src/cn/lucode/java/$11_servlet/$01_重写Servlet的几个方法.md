@@ -9,13 +9,13 @@ public class MyServlet implements Servlet {
     @Override
     public ServletConfig getServletConfig() {
          System.out.println("getServletConfig()....");
-        return null;
+        return null;
     }
     //获取服务信息
     @Override
     public String getServletInfo() {
          System.out.println("getServletInfo()");
-        return null;
+        return null;
     }
     //生命周期方法   初始化的  调用一次
     @Override

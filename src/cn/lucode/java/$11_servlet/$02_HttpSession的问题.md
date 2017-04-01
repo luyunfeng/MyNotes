@@ -28,7 +28,6 @@ HttpSession session = request.getSession();
 // 然后下面的  出问题!!
 String user_name = session.getAttribute("user_name");
 
-
 ```
 
 改进版

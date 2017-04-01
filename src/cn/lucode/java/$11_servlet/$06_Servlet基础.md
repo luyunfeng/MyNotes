@@ -1,6 +1,6 @@
 Servlet简单概述
 ================
-* 一些屁话：
+* 一些话：
 
   >javaee三大组件之一（Servlet，JSP，EJB）
   

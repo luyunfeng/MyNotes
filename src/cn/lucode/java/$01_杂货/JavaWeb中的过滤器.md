@@ -18,7 +18,7 @@ public class HelloFilter implements Filter {
 }
 ```
 第二步：在web.xml文件中部署Filter：
-```
+```xml
   <filter>
   	<filter-name>helloFilter</filter-name>
   	<filter-class>cn.filter.HelloFilter</filter-class>
@@ -98,7 +98,7 @@ doFilter()方法的参数中有一个类型为FilterChain的参数，
 # 4. 多个过滤器执行顺序
 一个目标资源可以指定多个过滤器，过滤器的执行顺序是在web.xml文件中的部署顺序。
 
-# 四种拦截方式
+# 5. 四种拦截方式
 一个测试，写一个过滤器，指定过滤的资源为b.jsp，
 然后我们在浏览器中直接访问b.jsp，你会发现过滤器执行了！
 但是当我们在a.jsp中  
@@ -118,7 +118,7 @@ http://localhost:8080/filtertest/a.jsp --> 访问a.jsp，但a.jsp会forward到b.
 
 > 直接访问目标资源时执行过滤器。  
 > 包括：在地址栏中直接访问、表单提交、超链接、重定向，只要在地址栏中可以看到目标资源的路径，就是REQUEST；
-```
+```xml
 <!--当没有给出拦截方式时，那么默认为REQUEST-->
 <filter-mapping>
 		<filter-name>myfilter</filter-name>
@@ -130,7 +130,7 @@ http://localhost:8080/filtertest/a.jsp --> 访问a.jsp，但a.jsp会forward到b.
 > 转发访问执行过滤器。  
 > 包括RequestDispatcher#forward()方法、```<jsp:forward>```标签都是转发访问；
 
-```
+```xml
 <!--b.jsp为目标资源，当直接请求b.jsp时，会执行过滤器;
     当转发到b.jsp页面时，会执行过滤器-->
 <filter-mapping>
@@ -149,7 +149,7 @@ http://localhost:8080/filtertest/a.jsp --> 访问a.jsp，但a.jsp会forward到b.
 
 > 当目标资源在web.xml中配置为<error-page>中时，并且真的出现了异常，转发到目标资源时，会执行过滤器。
 
-```
+```xml
 	<filter-mapping>
 		<filter-name>myfilter</filter-name>
 		<url-pattern>/b.jsp</url-pattern>
@@ -160,7 +160,7 @@ http://localhost:8080/filtertest/a.jsp --> 访问a.jsp，但a.jsp会forward到b.
 		<location>/b.jsp</location>
 	</error-page>
 ```
-```
+```html
   <body>
   <h1>a.jsp</h1>
    <%
@@ -168,9 +168,5 @@ http://localhost:8080/filtertest/a.jsp --> 访问a.jsp，但a.jsp会forward到b.
    	throw new RuntimeException("嘻嘻~");
    %>
   </body>
-
 ```
-
-
-
 

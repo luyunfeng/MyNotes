@@ -2,7 +2,7 @@
 
 * HttpSession session = request.getSession(true)
 
-###  区别
+### 区别
 
 1、request.getSession() 等价于 
    request.getSession(true) 

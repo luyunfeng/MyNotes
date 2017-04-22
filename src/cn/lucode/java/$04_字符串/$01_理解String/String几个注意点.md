@@ -49,7 +49,7 @@ public class Demo01 {
 ```
 # ==  和  equals()  的比较
 
-```java
+```
 /*
 * ==  和  equals()  的比较
 */
@@ -77,7 +77,7 @@ public class Demo01 {
 ```
 # 字符串拼接
 
-```java
+```
     //字符串的拼接
     @Test
     public void test4() {

@@ -71,10 +71,8 @@ sudo apt-get install -y docker-engine
 sudo curl -sSL https://get.docker.com/ | sh
 ```
 
-安装成功后，启动docker服务：
-```
-sudo service docker start
-```
+安装成功后，启动docker服务，见文章最后
+
 
 # 2. CentOS环境下安装Docker
 这里面就简单说一下，和上面的方法类似。
@@ -121,15 +119,32 @@ $ curl -fsSL https://test.docker.com/ | sh
 另外，也可以从github.com/docker/docker/releases找到所有的发行版本信息和二进制包，自行下载使用。
 
 # 4. 启动和的配置
+## 4.1 启动
+```
+sudo service docker start
+```
+## 4.2 验证是否启动成功
+输入
+```
+sudo docker version
+```
+会看到版本信息，就表示成功
+Client 和 Service 都出现
+## 4.3 关闭
+```
+sudo service docker stop
+```
+## 4.4 最后
+
 安装上述步骤安装的话会出现，每次使用docker 的时候都要特权身份运行。
 很麻烦。
 如何解决呢？
-
 可以将当前用户加入安装中自动创建的docker用户组：
 ```
 $ sudo usermod -aG docker USER_NAME
 ```
 USER_NAME是你的用户名
 用户更新组信息后，退出并重新登录后即可生效。
+
 
 

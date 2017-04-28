@@ -51,7 +51,7 @@ tomcat 是容器的名字
 然后退出容器,copy项目到 webapps 目录下
 ```
 docker cp /home/lucode/Desktop/Test.war  tomcat:/usr/local/tomcat/webapps
-``
+```
 
 # 5. 运行查看结果
 

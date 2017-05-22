@@ -9,6 +9,7 @@ public class 自动拆箱装箱 {
     @Test
     public void test() {
         Integer first = new Integer(3);
+        //Integer first = 3;
         Integer second = 3;
         int three = 3;
         System.out.println(first == second);//地址比较，Integer与Integer之间
@@ -29,6 +30,15 @@ public class 自动拆箱装箱 {
         Integer a6 = new Integer(111);
         System.out.println(a5 == a6);
         // false
+    }
+    // 这里面涉及到常量池的问题
+    @Test
+    public void test3() {
+        String s1="哈哈",s2="哈哈";
+        String s3=new String("哈哈");
+        System.out.println(s1==s2);
+        System.out.println(s1==s3);
+        // true  false
     }
 
 

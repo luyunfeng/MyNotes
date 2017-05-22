@@ -28,5 +28,5 @@ ServletConfig简单介绍
     </servlet>
 ```
 
- ![](./images/ServletConfig是什么.bmp)
+ ![](images/ServletConfig是什么.bmp)
 

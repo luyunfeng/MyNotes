@@ -26,5 +26,6 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="spring-core-3.2.5.RELEASE" level="project" />
   </component>
 </module>

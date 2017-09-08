@@ -27,7 +27,7 @@ public class ProxyFactory implements MethodInterceptor{
         // 4.创建 并返回
         return enhancer.create();
     }
-
+    // 如果 目标方法 是 final 或者 static 就无法被拦截到
     @Override
     public Object intercept(Object o, Method method, Object[] objects, MethodProxy methodProxy) throws Throwable {
         System.out.println("事务开启");

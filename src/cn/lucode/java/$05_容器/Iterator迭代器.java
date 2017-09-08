@@ -5,6 +5,7 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
+import java.util.List;
 
 /**
  * Created by lucode on 2017/3/14.
@@ -35,23 +36,28 @@ public class Iterator迭代器 {
     //删除元素
     @Test
     public void Test2() {
-        Collection c = new ArrayList();
+        List c = new ArrayList();
         c.add("hello");
         c.add("world");
         c.add("java");
+        //System.out.println(c.size());
 
         for (int i = 0; i < c.size(); i++) {
-            c.remove("world");
+            if (c.get(i).equals("hello")){
+                c.remove(i);
+            }
+            //c.remove("world");
             System.out.println("c.size():"+c.size());
         }
 
         // 遍历打印出来
-        Iterator it = c.iterator();
-        while (it.hasNext()) {
-            // System.out.println(it.next());
-            String s = (String) it.next();
-            System.out.println(s);
-        }
+//        Iterator it = c.iterator();
+//        while (it.hasNext()) {
+//            // System.out.println(it.next());
+//            String s = (String) it.next();
+//            c.remove("world");
+//            System.out.println(s);
+//        }
 
 
     }

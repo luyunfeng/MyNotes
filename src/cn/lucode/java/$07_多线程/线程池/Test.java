@@ -53,6 +53,8 @@ public class Test {
     public void test() {
 
         ExecutorService pool = Executors.newFixedThreadPool(3);
+
+
         pool.submit(new Runnable() {
             public void run() {
                 for (int i = 0; i < 10; i++) {
@@ -147,6 +149,46 @@ public class Test {
         System.out.println(queue.toString());
 
     }
+
+    @org.junit.Test
+    public void test3(){
+        try {
+            ThreadA t1 = new ThreadA("t1");
+            ThreadA t2 = new ThreadA("t2");
+            t1.start();
+            t2.start();
+            t1.join();
+            t2.join();
+            System.out.printf("%s finish\n", Thread.currentThread().getName());
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+
+
+    }
+    class ThreadA extends Thread{
+
+        public ThreadA(String name){
+            super(name);
+        }
+        public void run(){
+            System.out.printf("%s start\n", this.getName());
+
+            // 延时操作
+
+            try {
+                Thread.sleep(2000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
+            System.out.printf("%s finish\n", this.getName());
+        }
+    }
+
+
+
 }
 
 
